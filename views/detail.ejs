@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('./partials/head'); %>
+</head>
+<body>
+    <header class="clearfix">
+        <%- include('./partials/header'); %>
+    </header>
+    
+     <!-- Start Blog Body Section -->
+        <div class="col-md-12 blog-body">
+            
+            <!-- Start Blog post -->
+            <div class="blog-post">
+                <div class="post-img">
+                    <a href="#"><img src="<%= result.url; %>" class="img-responsive" alt="Blog image"></a>
+                </div>
+                <h1 class="post-title"><%= result.title; %></h1>
+                
+                <ul class="post-meta">
+                    <li><i class="fa fa-clock-o"></i><%= result.date %></li>
+                </ul>
+                <p class="post-content"><%= result.detail; %></p>
+
+                <p class="post-content"><%= result.description; %></p>
+                <!--<a href="#" class="btn btn-primary readmore">Read more...<i class="fa fa-angle-right"></i></a>-->
+                <a class="btn btn-warning" href="/edit/<%= result._id %>" role="button">Edit</a>
+                <a class="btn btn-danger" href="/delete/<%= result._id %>" role="button">Delete</a>
+            </div>
+            
+            <!-- End Blog Post -->
+        </div>
+        <!-- End Blog Body Section -->
+    </div>
+</div>
+<!-- End Blog Page Section -->
+
+    <footer>
+        <%- include('./partials/footer'); %>
+    </footer>
+</body>
+</html>
